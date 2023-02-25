@@ -13,6 +13,6 @@ class Home extends BaseController
 
     public function test()
     {
-        return json_encode($GLOBALS);
+        return json_encode($_SERVER);
     }
 }
