@@ -55,4 +55,16 @@ abstract class BaseController extends Controller
 
         // E.g.: $this->session = \Config\Services::session();
     }
+
+    /**
+     * load view per module.
+     */
+    protected function loadView(string $name, array $data = [], array $options = [])
+    {
+        $className  = get_class($this);
+        $exp        = explode('Controllers', $className);
+        $moduleName = $exp[0];
+        $name       = strpos($name, $moduleName) === false ? $moduleName . 'Views\\' . $name . '.php' : $name;
+        return view($name, $data, $options);
+    }
 }

@@ -8,7 +8,7 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('welcome_message');
+        return $this->loadView('home');
     }
 
     public function test()
