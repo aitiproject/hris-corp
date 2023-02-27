@@ -8,7 +8,12 @@ class Home extends BaseController
 {
     public function index()
     {
-        return $this->loadView('home');
+        $data = [
+            'meta' => [
+                'appName' => 'dadhkad kadhada'
+            ]
+        ];
+        return $this->loadView('home', $data);
     }
 
     public function test()

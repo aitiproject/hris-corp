@@ -10,7 +10,7 @@
 <!-- end breadcrumb -->
 <!-- begin page-header -->
 <h1 class="page-header">Blank Page <small>header small text goes here...</small></h1>
-<!-- end page-header -->
+<!-- end page-header --> 
 
 <div class="row">
     <div class="col-md-12">

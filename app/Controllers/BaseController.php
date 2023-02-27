@@ -65,6 +65,26 @@ abstract class BaseController extends Controller
         $exp        = explode('Controllers', $className);
         $moduleName = $exp[0];
         $name       = strpos($name, $moduleName) === false ? $moduleName . 'Views\\' . $name . '.php' : $name;
-        return view($name, $data, $options);
+
+        $defaultData = [
+            'meta' => [
+                'appName'     => "HRIS Corporate",
+                'pageTitle'   => "Sample Page",
+                'description' => "Sample Page of HRIS corporate system",
+                'author'      => "@arif1anto",
+            ]
+        ];
+        
+        $data = $data + $defaultData;
+
+        // convert items to object type
+        $dataObject = [];
+        foreach ($data as $key => $value) {
+            $dataObject[$key] = (Object) $value;
+        }
+
+        dd($dataObject);
+
+        return view($name, $dataObject, $options);
     }
 }
