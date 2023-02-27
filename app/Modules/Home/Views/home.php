@@ -1,15 +1,7 @@
-<?= $this->extend('layout/admin_layout') ?>
-
-<?= $this->section('content') ?>
-<!-- begin breadcrumb -->
-<ol class="breadcrumb pull-right">
-    <li><a href="javascript:;">Home</a></li>
-    <li><a href="javascript:;">Page Options</a></li>
-    <li class="active">Blank Page</li>
-</ol>
-<!-- end breadcrumb -->
+<?= $isAjax ? '' : $this->extend('layout/admin_layout') ?>
+<?= $isAjax ? '' : $this->section('content') ?>
 <!-- begin page-header -->
-<h1 class="page-header">Blank Page <small>header small text goes here...</small></h1>
+<h1 class="page-header"><?= $meta->pageTitle ?> <small><?= @$meta->description ?></small></h1>
 <!-- end page-header --> 
 
 <div class="row">
@@ -25,10 +17,10 @@
                 <h4 class="panel-title">Panel Title here</h4>
             </div>
             <div class="panel-body">
-                Panel Content Here
+                Home
             </div>
         </div>
     </div>
 </div>
 
-<?= $this->endSection() ?>
+<?= $isAjax ? '' : $this->endSection() ?>

@@ -1,6 +1,6 @@
 <head>
     <meta charset="utf-8" />
-    <title><?= ($meta->appName . " | " . $meta->pageTitle) ?? "HRIS Corporate | Sample Page" ?></title>
+    <title><?= ($meta->pageTitle . ' - ' . $meta->appName) ?? "HRIS Corporate | Sample Page" ?></title>
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
     <meta content="<?= @$meta->description ?>" name="description" />
     <meta content="<?= @$meta->author ?>" name="author" />

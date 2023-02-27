@@ -16,6 +16,7 @@
 		
 		<!-- begin #content -->
 		<div id="content" class="content">
+    		<?= $this->include('layout/breadcrumb') ?>
             <?= $this->renderSection('content') ?>
 		</div>
 		<!-- end #content -->

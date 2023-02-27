@@ -57,7 +57,7 @@ abstract class BaseController extends Controller
     }
 
     /**
-     * load view per module.
+     * Load view per module with default data format
      */
     protected function loadView(string $name, array $data = [], array $options = [])
     {
@@ -67,23 +67,32 @@ abstract class BaseController extends Controller
         $name       = strpos($name, $moduleName) === false ? $moduleName . 'Views\\' . $name . '.php' : $name;
 
         $defaultData = [
-            'meta' => [
-                'appName'     => "HRIS Corporate",
+            'isAjax' => $this->request->isAJAX(),
+            'meta'   => [
+                'appName'     => env('app.name'),
                 'pageTitle'   => "Sample Page",
                 'description' => "Sample Page of HRIS corporate system",
                 'author'      => "@arif1anto",
             ]
         ];
         
-        $data = $data + $defaultData;
+        $mergedData = [];
+        foreach ($defaultData as $key => $value) {
+            if(is_array($value)){
+                $mergedData[$key] = array_merge($value, $data[$key] ?? []);
+            } else {
+                $mergedData[$key] = $value;
+            }
+        }
+        $data = $mergedData + $data;
 
         // convert items to object type
         $dataObject = [];
         foreach ($data as $key => $value) {
-            $dataObject[$key] = (Object) $value;
+            $dataObject[$key] = is_array($value) ? (Object) $value : $value;
         }
 
-        dd($dataObject);
+        // dd($dataObject);
 
         return view($name, $dataObject, $options);
     }

@@ -6,18 +6,18 @@ use App\Controllers\BaseController;
 
 class Home extends BaseController
 {
+    private $data = [
+        'meta' => [
+            'pageTitle' => 'Home'
+        ],
+        'breadcrumb' => [
+            ['name' => 'Home', 'url' => 'javascript:;'],
+            ['name' => 'Home 1', 'url' => 'javascript:;']
+        ]
+    ];
+
     public function index()
     {
-        $data = [
-            'meta' => [
-                'appName' => 'dadhkad kadhada'
-            ]
-        ];
-        return $this->loadView('home', $data);
-    }
-
-    public function test()
-    {
-        return json_encode($_SERVER);
+        return $this->loadView('home', $this->data);
     }
 }
