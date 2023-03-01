@@ -1,0 +1,127 @@
+<?php
+
+namespace App\Modules\Employee\Models;
+
+use CodeIgniter\Model;
+
+class EmployeeModel extends Model
+{
+    protected $DBGroup = 'default';
+
+    protected $table            = 'users';
+    protected $primaryKey       = 'id';
+    protected $useAutoIncrement = true;
+    protected $allowedFields    = [
+        'nik',
+        'nama',
+        'nickname',
+        'gender',
+        'alamat',
+        'kota',
+        'kodepos',
+        'telpon',
+        'handphone',
+        'pob',
+        'dob',
+        'agama',
+        'joindate',
+        'lasteducation',
+        'edu_school',
+        'is_married',
+        'nama_istri',
+        'dob_istri',
+        'tgl_menikah',
+        'is_permanent',
+        'is_active',
+        'phkdate',
+        'phkreason',
+        'id_golongan',
+        'id_dept',
+        'id_jabatan',
+        'kd_struktur',
+        'alamat_asal',
+        'kota_asal',
+        'kodepos_asal',
+        'iso_9002',
+        'iso_14001',
+        'is_shift',
+        'contract_start',
+        'contract_end',
+        'id_div',
+        'id_sec',
+        'id_subsec',
+        'status_pajak',
+        'contract_start2',
+        'contract_end2',
+        'ttl_month1',
+        'ttl_month2',
+        'warga_negara',
+        'mata_uang',
+        'ukuran_baju',
+        'ukuran_sepatu',
+        'gol_darah',
+        'kel_dekat',
+        'kel_phone',
+        'bus',
+        'employeeno',
+        'nilai',
+        'kel_wanita',
+        'kopkar',
+        'gajipokok',
+        'kurs',
+        'union_fspmi',
+        'union_internal',
+        'account_no',
+        'tunj_keahlian',
+        'a_technical',
+        'a_tempat_kerja',
+        'npwp',
+        'tgl_jabatan',
+        'tgl_tetap',
+        'no_ktp',
+        'sts_bpjs1',
+        'no_kk',
+        'ibu_kandung',
+        'status_kel',
+        'sts_bpjstk',
+        'sts_bpjspensiun',
+        'kd_plant',
+        'ket_kontrak',
+        'ukuran_celana',
+        'ukuran_baju_lengan',
+        'reff_rekrutmen',
+        'kd_grade',
+        'provinsi',
+        'provinsi_asal',
+        'kepemilikan_rumah',
+        'outsource_tgl',
+        'asuransi_nama',
+        'asuransi_plan',
+        'bpjstk_tglgabung',
+        'bpjstk_nopeserta',
+        'bpjskes_tglgabung',
+        'bpjskes_nopeserta',
+        'kpj_tglgabung',
+        'kpj_nopeserta',
+        'bank_nama',
+        'badan_tinggi',
+        'badan_berat',
+        'notes',
+        'loker_no',
+        'loker_no_kunci',
+        'npwp_exp',
+        'dept_jpn',
+        'area_kerja',
+        'empid_text',
+        'kd_grup_shift',
+        'remark',
+    ];
+    protected $returnType       = App\Modules\Employee\Entities\Employee::class;
+    protected $useSoftDeletes   = true;
+
+    // Validation
+    protected $validationRules      = [];
+    protected $validationMessages   = [];
+    protected $skipValidation       = false;
+    protected $cleanValidationRules = true;
+}

@@ -19,5 +19,5 @@ if(!isset($routes))
 $routes->group('employee', ['namespace' => 'App\Modules\Employee\Controllers'], function($routes){
 
 	$routes->add('/', 'Employee::index');
-
+	$routes->add('/json/(:any)', 'Employee::json/$1');
 });
