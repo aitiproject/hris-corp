@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Home\Config;
+namespace App\Modules\Employee\Config;
 
 if(!isset($routes))
 { 
@@ -15,3 +15,9 @@ if(!isset($routes))
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
+$routes->group('employee', ['namespace' => 'App\Modules\Employee\Controllers'], function($routes){
+
+	$routes->add('/', 'Employee::index');
+
+});
