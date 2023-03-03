@@ -8,9 +8,9 @@ class EmployeeModel extends Model
 {
     protected $DBGroup = 'default';
 
-    protected $table            = 'users';
-    protected $primaryKey       = 'id';
-    protected $useAutoIncrement = true;
+    protected $table            = 'hrd_employee';
+    protected $primaryKey       = 'nik';
+    protected $useAutoIncrement = false;
     protected $allowedFields    = [
         'nik',
         'nama',
@@ -116,8 +116,8 @@ class EmployeeModel extends Model
         'kd_grup_shift',
         'remark',
     ];
-    protected $returnType       = App\Modules\Employee\Entities\Employee::class;
-    protected $useSoftDeletes   = true;
+    protected $returnType       = 'App\Modules\Employee\Entities\Employee';
+    protected $useSoftDeletes   = false;
 
     // Validation
     protected $validationRules      = [];

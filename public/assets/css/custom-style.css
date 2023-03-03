@@ -1,0 +1,12 @@
+/* table styling */
+.table>tbody>tr>td,
+.table>tfoot>tr>td,
+.table>thead>tr>td {
+    padding: 2px 4px;
+}
+
+.table>tbody>tr>th,
+.table>tfoot>tr>th,
+.table>thead>tr>th {
+    white-space: nowrap;
+}

@@ -28,6 +28,10 @@
     <link href="<?= base_url() ?>assets/plugins/DataTables/extensions/Scroller/css/scroller.bootstrap.min.css" rel="stylesheet" />
     <!-- ================== END PAGE LEVEL STYLE ================== -->
 
+    <!-- ================== BEGIN CUSTOM STYLE ================== -->
+    <link href="<?= base_url() ?>assets/css/custom-style.css" rel="stylesheet" id="custom" />
+    <!-- ================== END CUSTOM STYLE ================== -->
+
     <!-- ================== BEGIN BASE JS ================== -->
     <script src="<?= base_url() ?>assets/plugins/pace/pace.min.js"></script>
     <!-- ================== END BASE JS ================== -->

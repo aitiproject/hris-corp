@@ -16,8 +16,4 @@ if(!isset($routes))
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 
-$routes->group('employee', ['namespace' => 'App\Modules\Employee\Controllers'], function($routes){
-
-	$routes->add('/', 'Employee::index');
-	$routes->add('/json/(:any)', 'Employee::json/$1');
-});
+$routes->resource('employee', ['namespace' => 'App\Modules\Employee\Controllers']);

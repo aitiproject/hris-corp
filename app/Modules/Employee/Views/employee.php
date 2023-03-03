@@ -21,17 +21,10 @@
                 <h4 class="panel-title"><?= $meta->pageTitle ?> List</h4>
             </div>
             <div class="panel-body">
+                <!-- <div class="table-responsive"> -->
                 <table id="data-table" class="table table-striped table-bordered">
-                    <thead>
-                        <tr>
-                            <th width="100px" nowrap>ID</th>
-                            <th width="200px" nowrap>First name</th>
-                            <th width="200px" nowrap>Last name</th>
-                            <th width="200px" nowrap>ZIP / Post code</th>
-                            <th>Country</th>
-                        </tr>
-                    </thead>
                 </table>
+                <!-- </div> -->
             </div>
         </div>
     </div>
@@ -40,56 +33,59 @@
 
 <?= $isAjax ? '' : $this->section('additional-js') ?>
 <script>
-
     // Activate an inline edit on click of a table cell
     $('#data-table').on('click', 'tbody td:not(:first-child)', function(e) {
         editor.inline(this);
     });
 
-    var handleDataTable = function() {
-            "use strict";
-            0 !== $("#data-table").length && $("#data-table").DataTable({
-                dom: '<"row"<"col-sm-5"B><"col-sm-7"fr>>t<"row"<"col-sm-5"i><"col-sm-7"p>>',
-                buttons: [{
-                        extend: 'copy',
-                        className: 'btn-sm'
-                    },
-                    {
-                        extend: 'csv',
-                        className: 'btn-sm'
-                    },
-                    {
-                        extend: 'excel',
-                        className: 'btn-sm'
-                    },
-                    {
-                        extend: 'pdf',
-                        className: 'btn-sm'
-                    },
-                    {
-                        extend: 'print',
-                        className: 'btn-sm'
-                    }
-                ],
-                ajax: "../assets/js/demo/json/scroller_demo.json",
-                deferRender: true,
-                scrollY: 500,
-                scrollCollapse: true,
-                scroller: true,
-                responsive: true,
-            })
-        },
-        Table = function() {
-            "use strict";
-            return {
-                init: function() {
-                    handleDataTable()
-                }
-            }
-        }();
+    var fields = JSON.parse(`<?= json_encode((array) $fields) ?>`);
 
     $(document).ready(function() {
-        Table.init();
+        table = $("#data-table").DataTable({
+            dom: '<"row"<"col-sm-5"B><"col-sm-7"fr>>t<"row"<"col-sm-5"i><"col-sm-7"p>>',
+            buttons: [{
+                    extend: 'copy',
+                    className: 'btn-sm'
+                },
+                {
+                    extend: 'csv',
+                    className: 'btn-sm'
+                },
+                {
+                    extend: 'excel',
+                    className: 'btn-sm'
+                },
+                {
+                    extend: 'pdf',
+                    className: 'btn-sm'
+                },
+                {
+                    extend: 'print',
+                    className: 'btn-sm'
+                }
+            ],
+            ajax: {
+                url: '',
+            },
+            columns       : fields,
+            deferRender   : true,
+            scrollX       : true,
+            // scrollY       : 500,
+            scrollCollapse: true,
+            // scroller      : true,
+            searching     : true,
+            paging        : true,
+            pageLength : 30,
+            columnDefs    : [{
+                "defaultContent": "-",
+                "targets": "_all"
+            }],
+            "fnRowCallback": function( nRow, aData, iDisplayIndex ) {
+                $('td', nRow).attr('nowrap','nowrap');
+                return nRow;
+                }
+        });
+        // table.ajax.reload();
     });
 </script>
 <?= $isAjax ? '' : $this->endSection() ?>
