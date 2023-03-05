@@ -110,6 +110,27 @@ class Employee extends BaseController
         return $this->respond($response);
     }
 
+    public function batch_update()
+    {
+        $post = $this->request->getPost('data');
+        // print_r($post); die;
+        foreach ($post as $id => $val) {
+            $emp = $this->empModel->find($id);
+            $emp->fill($val);
+            $emp->nik = $id;
+            $this->empModel->save($emp);
+        }
+        $response = [
+            'status'   => 200,
+            'error'    => null,
+            'data'     => $post,
+            'messages' => [
+                'success' => 'Data Updated'
+            ]
+        ];
+        return $this->respond($response);
+    }
+
     // delete employee
     public function delete($id = null)
     {
