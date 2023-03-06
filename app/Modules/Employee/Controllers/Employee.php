@@ -113,6 +113,17 @@ class Employee extends BaseController
     public function batch_update()
     {
         $post = $this->request->getPost('data');
+        if(!$post){
+            return $this->respond([
+                'status' => 200,
+                'error'    => null,
+                'data'     => $post,
+                'messages' => [
+                    'success' => 'No Data Updated'
+                ]
+            ]);
+        }
+        
         // print_r($post); die;
         foreach ($post as $id => $val) {
             $emp = $this->empModel->find($id);
