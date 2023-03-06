@@ -21,7 +21,7 @@
             <li class="has-sub">
                 <a href="javascript:;">
                     <b class="caret pull-right"></b>
-                    <i class="fa fa-align-left"></i>
+                    <i class="fa fa-users"></i>
                     <span>Master Karyawan</span>
                 </a>
                 <ul class="sub-menu">
@@ -68,8 +68,34 @@
             <li class="has-sub">
                 <a href="javascript:;">
                     <b class="caret pull-right"></b>
-                    <i class="fa fa-align-left"></i>
+                    <i class="fa fa-address-book-o"></i>
                     <span>Kehadiran</span>
+                </a>
+                <ul class="sub-menu">
+                    <li><a href="javascript:;">data absen harian</a></li>
+                    <li><a href="javascript:;">kelompok display</a></li>
+                    <li><a href="javascript:;">entry jadwal kerja</a></li>
+                    <li><a href="javascript:;">jadwal kerja group</a></li>
+                    <li><a href="javascript:;">kelompok shift karyawan</a></li>
+                    <li><a href="javascript:;">kelompok group shift</a></li>
+                    <li><a href="javascript:;">entry kehadiran (harian / karyawan)</a></li>
+                    <li><a href="javascript:;">manajemen lembur</a></li>
+                    <li><a href="javascript:;">manajemen cuti</a></li>
+                    <li><a href="javascript:;">import data kehadiran</a></li>
+                    <li><a href="javascript:;">proses data kehadiran</a></li>
+                    <li><a href="javascript:;">referensi kehadiran</a></li>
+                    <li><a href="javascript:;">entri jam operasional mesin</a></li>
+                    <li><a href="javascript:;">rekap kehadiran payroll</a></li>
+                    <li><a href="javascript:;">susu kopi</a></li>
+                    <li><a href="javascript:;">data tidak hadir karyawan</a></li>
+                </ul>
+            </li>
+
+            <li class="has-sub">
+                <a href="javascript:;">
+                    <b class="caret pull-right"></b>
+                    <i class="fa fa-address-book-o"></i>
+                    <span>Penggajian</span>
                 </a>
                 <ul class="sub-menu">
                     <li><a href="javascript:;">data absen harian</a></li>
