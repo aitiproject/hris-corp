@@ -32,7 +32,7 @@
                         </a>
                         <ul class="sub-menu">
                             <li><a href="javascript:;">form input karyawan</a></li>
-                            <li class="active"><a href="<?= base_url() ?>/employee">edit table daftar karyawan</a></li>
+                            <li class="active"><a href="<?= base_url() ?>employee">edit table daftar karyawan</a></li>
                             <li><a href="javascript:;">data keluarga</a></li>
                             <li><a href="javascript:;">pemeliharaan data karyawan</a></li>
                             <li><a href="javascript:;">import rekening</a></li>
